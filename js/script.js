@@ -1,13 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const carrito = [];
     const carritoCount = document.getElementById("carritoCount");
+    const carritoList = document.getElementById("carritoList");
+    const totalPriceElement = document.getElementById("totalPrice");
+    const carritoModal = document.getElementById("carritoModal");
     const catalogo = document.getElementById("catalogo");
     const marcasContainer = document.getElementById("marcasContainer");
     const modelosContainer = document.getElementById("modelos");
     const piezasModal = document.getElementById("piezasModal");
-    const carritoModal = document.getElementById("carritoModal");
 
-    // Función para abrir y cerrar modales
+    // Cargar el carrito desde localStorage
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Función para actualizar el carrito
+    function actualizarCarrito() {
+        carritoCount.textContent = carrito.length;
+
+        carritoList.innerHTML = '';
+        let total = 0;
+        carrito.forEach((producto, index) => {
+            const divProducto = document.createElement("div");
+            divProducto.classList.add("productoCarrito");
+            divProducto.innerHTML = ` 
+                <p>${producto.id}</p>
+                <p>Precio: $${producto.precio}</p>
+                <button class="eliminarProducto" data-index="${index}">Eliminar</button>
+            `;
+            carritoList.appendChild(divProducto);
+            total += producto.precio;
+        });
+
+        totalPriceElement.textContent = total.toFixed(2);
+
+        // Guardar el carrito en localStorage cada vez que se actualiza
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        // Agregar funcionalidad de eliminar producto del carrito
+        document.querySelectorAll('.eliminarProducto').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                carrito.splice(index, 1); // Eliminar producto
+                actualizarCarrito(); // Actualizar el carrito después de eliminar el producto
+            });
+        });
+    }
+
+    // Función para agregar un producto al carrito
+    function agregarAlCarrito(productoId, precio) {
+        carrito.push({ id: productoId, precio: precio });
+        actualizarCarrito(); // Actualizar el carrito
+    }
+
+    // Abrir y cerrar modales
     function abrirModal(modal) {
         modal.style.display = "block";
     }
@@ -123,8 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         button.addEventListener('click', (e) => {
                             const productoId = e.target.getAttribute('data-id');
                             const precio = parseFloat(e.target.getAttribute('data-precio'));
-                            carrito.push({ id: productoId, precio: precio });
-                            actualizarCarrito();
+                            agregarAlCarrito(productoId, precio);
                         });
                     });
                 } else {
@@ -134,42 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-    // Función para actualizar el carrito
-    function actualizarCarrito() {
-        carritoCount.textContent = carrito.length;
-
-        const carritoList = document.getElementById("carritoList");
-        carritoList.innerHTML = '';
-
-        let total = 0;
-        carrito.forEach((producto, index) => {
-            const divProducto = document.createElement("div");
-            divProducto.classList.add("productoCarrito");
-            divProducto.innerHTML = ` 
-                <p>${producto.id}</p>
-                <p>Precio: $${producto.precio}</p>
-                <button class="eliminarProducto" data-index="${index}">Eliminar</button>
-            `;
-            carritoList.appendChild(divProducto);
-            total += producto.precio;
-        });
-
-        document.getElementById("totalPrice").textContent = total.toFixed(2);
-
-        // Agregar funcionalidad de eliminar producto del carrito
-        document.querySelectorAll('.eliminarProducto').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                carrito.splice(index, 1); // Eliminar producto
-                actualizarCarrito();
-            });
-        });
-    }
-
     // Vaciar el carrito
     document.getElementById("vaciarCarrito").addEventListener('click', () => {
-        carrito.length = 0;
-        actualizarCarrito();
+        carrito.length = 0;  // Vaciar el carrito
+        actualizarCarrito(); // Actualizar el carrito después de vaciarlo
         carritoModal.style.display = "none";
     });
 
@@ -222,4 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cambiar de imagen automáticamente cada 5 segundos
     setInterval(showNextItem, 5000); // Cambia la imagen cada 5 segundos
+
+    // Inicializar el carrito al cargar la página
+    actualizarCarrito();
 });
