@@ -1,0 +1,586 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c; /* Fondo oscuro */
+}
+
+header {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    max-width: 100px;
+}
+
+#nombre-logo h1 {
+    margin: 0;
+}
+
+/* Barra de navegación */
+#barra-nav {
+    background-color: #b71c1c; /* Rojo oscuro */
+    padding: 10px 0;
+}
+
+#barra-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#barra-nav li {
+    margin: 0 20px;
+}
+
+#barra-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Carrusel de Noticias */
+#carrusel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carrusel-item.active {
+    display: block;
+}
+
+.texto-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+}
+
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Modal de Piezas */
+#piezasModal .modal-content {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+#modelos {
+    width: 30%;
+    padding-right: 20px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+#modelos .modelo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#modelos .modelo img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#modelos .modelo button {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#modelos .modelo button:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Modal de Catálogo */
+#catalogo {
+    width: 65%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+#catalogo .producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#catalogo .producto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#catalogo .producto button {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#catalogo .producto button:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Botón para el carrito en el fondo */
+#openCarritoBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#openCarritoBtn:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Para el modal de carrito */
+#carritoModal .modal-content {
+    width: 400px;
+    height: 80%;
+}
+
+#carritoList .productoCarrito {
+    margin-bottom: 10px;
+}
+
+/* Estilo del carrito */
+#carritoModal .productoCarrito {
+    display: flex;
+    justify-content: space-between;
+}
+
+#total {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#totalPrice {
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilos generales de las secciones */
+.contenedor {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    margin-top: 0;
+}
+
+/* ** Modal de Marcas ** */
+#marcasModal .modal-content {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+#marcas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+#marcas .marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 150px;
+}
+
+#marcas .marca img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#marcas .marca:hover {
+    background-color: #ddd;
+}
+
+/* Adaptación a dispositivos móviles */
+@media screen and (max-width: 768px) {
+    #piezasModal .modal-content {
+        flex-direction: column;
+    }
+
+    #modelos, #catalogo {
+        width: 100%;
+    }
+
+    #catalogo .producto {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #marcas .marca {
+        width: 100%;
+    }
+
+    #openCarritoBtn {
+        bottom: 10px;
+    }
+}
+
+/* Contenedor para las marcas */
+#marcasContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#marcasContainer .marca {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 150px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+#marcasContainer .marca img {
+    width: 80%;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+#marcasContainer .marca button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#marcasContainer .marca button:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Adaptación para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    #marcasContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Carrusel de Noticias */
+#carrusel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.carrusel-item.active {
+    display: block;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Encabezados de las secciones */
+h2, h3 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #d32f2f; /* Rojo */
+}
+
+/* Puedes hacer más ajustes si necesitas personalizar aún más para dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    h2, h3 {
+        font-size: 28px;
+    }
+}
+
+/* Centrar las imágenes en las secciones */
+section img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+/* Estilo para los botones en el modal de piezas */
+#piezasModal .modal-content button,
+#carritoModal .modal-content button {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo de los botones al hacer hover */
+#piezasModal .modal-content button:hover,
+#carritoModal .modal-content button:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Botón de "Vaciar Carrito" */
+#vaciarCarrito {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Botón de "Vaciar Carrito" al hacer hover */
+#vaciarCarrito:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Botón "Ver Piezas" en el carrito */
+#verPiezasDesdeCarrito {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Botón "Ver Piezas" al hacer hover */
+#verPiezasDesdeCarrito:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Botón "Ver Carrito" desde el modal de piezas */
+.irCarrito {
+    background-color: #d32f2f; /* Rojo */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón "Ver Carrito" al hacer hover */
+.irCarrito:hover {
+    background-color: #b71c1c; /* Rojo oscuro */
+}
+
+/* Estilo de los botones "Eliminar" dentro del carrito */
+.eliminarProducto {
+    background-color: #f44336; /* Rojo claro */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón "Eliminar" al hacer hover */
+.eliminarProducto:hover {
+    background-color: #d32f2f; /* Rojo */
+}
+
+/* Estilos adicionales para los modales */
+.modal-content button {
+    margin: 10px;
+}
+
+/* General para los botones en ambos modales */
+button {
+    display: inline-block;
+    text-decoration: none;
+}

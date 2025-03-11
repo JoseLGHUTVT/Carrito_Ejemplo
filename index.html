@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Piezas de Autos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="Logo de la Empresa" />
+        </div>
+        <div id="nombre-logo">
+            <h1>LermaMax</h1>
+        </div>
+    </header>    
+
+    <nav id="barra-nav">
+        <ul>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#piezas" id="abrirPiezas">Piezas</a></li>
+            <li><a href="#informacion">Información</a></li>
+            <li><a href="#acerca-de">Acerca de</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#carrito" id="abrirCarrito">Carrito (<span id="carritoCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <section id="noticias" class="contenedor">
+        <h2>Noticias</h2>
+        <p>Bienvenido a nuestra sección de noticias. Aquí encontrarás las últimas actualizaciones sobre el mundo de las piezas de automóviles, lanzamientos de nuevos productos y ofertas especiales.</p>
+        
+       
+        <!-- Carrusel de Noticias -->
+<div id="carrusel" class="carrusel-container">
+    <div class="carrusel-item active">
+        <img src="images/noticia1.jpg" alt="Noticia 1">
+        <div class="texto-overlay">
+            <p>Piezas de buena calidad y a un precio accesible. ¡Mejora el rendimiento de tu vehículo!</p>
+        </div>
+    </div>
+    <div class="carrusel-item">
+        <img src="images/noticia2.jpg" alt="Noticia 2">
+        <div class="texto-overlay">
+            <p>Promociones especiales para clientes registrados. ¡Descuentos de hasta un 15% en piezas seleccionadas!</p>
+        </div>
+    </div>
+    <div class="carrusel-item">
+        <img src="images/noticia3.jpg" alt="Noticia 3">
+        <div class="texto-overlay">
+            <p>Recordatorio: Todos nuestros repuestos son de alta calidad y cumplen con las normativas internacionales de seguridad.</p>
+        </div>
+    </div>
+
+    <!-- Botones para navegar entre las imágenes -->
+    <button id="prev">&lt;</button>
+    <button id="next">&gt;</button>
+</div>
+
+
+    
+
+    <!-- Sección de Piezas -->
+    <section id="piezas" class="contenedor">
+        <h2>Piezas</h2>
+        <p>En nuestra tienda encontrarás una amplia variedad de piezas de automóviles, desde repuestos básicos hasta componentes de alta gama. Navega por nuestro catálogo para encontrar lo que necesitas para tu vehículo.</p>
+
+        <h3>Selecciona una Marca:</h3>
+        <div id="marcasContainer" class="contenedor-marcas">
+            <!-- Aquí se cargarán las marcas -->
+        </div>
+    </section>
+
+    <!-- Sección de Información -->
+<section id="informacion" class="contenedor">
+    <h2>Información</h2>
+    <p>Descubre más sobre nuestra empresa, los servicios que ofrecemos y cómo podemos ayudarte a mantener tu auto en perfecto estado. Te ofrecemos asesoría profesional para seleccionar las mejores piezas.</p>
+    <p>¿Por qué elegirnos?</p>
+    <ul>
+        <li>Contamos con un equipo especializado que te guiará en la elección de piezas que se adapten a las necesidades de tu vehículo.</li>
+        <li>Ofrecemos garantías en todos nuestros productos, asegurando la calidad de cada pieza.</li>
+        <li>Enviamos tus pedidos a nivel nacional con opciones de envío rápido y seguro.</li>
+    </ul>
+    <!-- Imagen en la sección Información -->
+    <img src="images/informacion.png" alt="Información sobre nuestra empresa">
+</section>
+
+<!-- Sección Acerca de -->
+<section id="acerca-de" class="contenedor">
+    <h2>Acerca de</h2>
+    <p>Somos una empresa dedicada a ofrecer repuestos automotrices de alta calidad. Nuestro objetivo es garantizar que todos nuestros clientes encuentren las piezas adecuadas para sus vehículos, con un servicio eficiente y precios competitivos.</p>
+    <p>Nuestra misión es ser el referente principal en el mercado de repuestos de automóviles, brindando a nuestros clientes las mejores soluciones en piezas de repuesto, con un enfoque en la satisfacción del cliente.</p>
+    <p>Con más de 10 años de experiencia, contamos con una red de proveedores confiables, lo que nos permite ofrecer productos de alto rendimiento, durabilidad y calidad.</p>
+    <!-- Imagen en la sección Acerca de -->
+    <img src="images/acerca-de.jpg" alt="Sobre nuestra empresa">
+</section>
+
+<!-- Sección de Contacto -->
+<section id="contacto" class="contenedor">
+    <h2>Contacto</h2>
+    <p>Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros. Estaremos encantados de ayudarte. Puedes escribirnos a nuestro correo electrónico o llamarnos directamente.</p>
+    <p>Correo electrónico: <a href="mailto:soporte@lermaauto.com">soporte@lermaauto.com</a></p>
+    <p>Teléfono: +123 456 789</p>
+    <p>Dirección: Calle Ficticia 123, Ciudad Automotriz, País</p>
+    <p>Horario de atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+    <!-- Imagen en la sección Contacto -->
+    <img src="images/contacto.png" alt="Contáctanos">
+</section>
+
+    <!-- Modal de Piezas -->
+    <div id="piezasModal" class="modal">
+        <div class="modal-content">
+            <span id="cerrarPiezas" class="close">&times;</span>
+            <h2>Seleccionar Piezas</h2>
+            <div id="modelos" class="contenedor-modelos">
+                <!-- Aquí se cargarán los modelos -->
+            </div>
+            <div id="catalogo" class="catalogo">
+                <!-- Aquí se cargarán las piezas -->
+            </div>
+            <button id="verCarritoDesdePiezas">Ver Carrito</button>
+        </div>
+    </div>
+
+    <!-- Modal de carrito -->
+    <div id="carritoModal" class="modal">
+        <div class="modal-content">
+            <span id="cerrarModal" class="close">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="carritoList" class="contenedor-carrito"></div>
+            <div id="total">
+                <p>Total: $<span id="totalPrice">0</span></p>
+            </div>
+            <button id="vaciarCarrito">Vaciar Carrito</button>
+            <button id="verPiezasDesdeCarrito">Ver Piezas</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 LermaMax Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

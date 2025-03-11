@@ -1,0 +1,255 @@
+[
+    {
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "producto": "Filtro de aire",
+      "precio": 300,
+      "imagen": "producto1.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "producto": "Pastillas de freno",
+      "precio": 750,
+      "imagen": "producto2.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "producto": "Amortiguador delantero",
+      "precio": 1100,
+      "imagen": "producto3.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Camry",
+      "producto": "Filtro de aceite",
+      "precio": 400,
+      "imagen": "producto4.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Camry",
+      "producto": "Pastillas de freno",
+      "precio": 900,
+      "imagen": "producto5.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Camry",
+      "producto": "Amortiguador trasero",
+      "precio": 1200,
+      "imagen": "producto6.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "producto": "Filtro de aire",
+      "precio": 350,
+      "imagen": "producto7.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "producto": "Pastillas de freno",
+      "precio": 800,
+      "imagen": "producto8.png"
+    },
+    {
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "producto": "Amortiguador delantero",
+      "precio": 950,
+      "imagen": "producto9.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Civic",
+      "producto": "Freno de disco",
+      "precio": 650,
+      "imagen": "producto10.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Civic",
+      "producto": "Amortiguador trasero",
+      "precio": 1000,
+      "imagen": "producto11.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Civic",
+      "producto": "Filtro de aceite",
+      "precio": 350,
+      "imagen": "producto12.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Accord",
+      "producto": "Filtro de aire",
+      "precio": 320,
+      "imagen": "producto13.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Accord",
+      "producto": "Pastillas de freno",
+      "precio": 720,
+      "imagen": "producto14.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Accord",
+      "producto": "Amortiguador delantero",
+      "precio": 1050,
+      "imagen": "producto15.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Pilot",
+      "producto": "Freno de disco",
+      "precio": 620,
+      "imagen": "producto16.png"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "Pilot",
+      "producto": "Pastillas de freno",
+      "precio": 750,
+      "imagen": "producto17.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Fiesta",
+      "producto": "Freno de disco",
+      "precio": 500,
+      "imagen": "producto18.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Fiesta",
+      "producto": "Pastillas de freno",
+      "precio": 650,
+      "imagen": "producto19.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Fiesta",
+      "producto": "Amortiguador trasero",
+      "precio": 850,
+      "imagen": "producto20.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Mustang",
+      "producto": "Filtro de aceite",
+      "precio": 350,
+      "imagen": "producto21.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Mustang",
+      "producto": "Pastillas de freno",
+      "precio": 800,
+      "imagen": "producto22.png"
+    },
+    {
+      "marca": "Ford",
+      "modelo": "Mustang",
+      "producto": "Amortiguador trasero",
+      "precio": 950,
+      "imagen": "producto23.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Altima",
+      "producto": "Freno de disco",
+      "precio": 550,
+      "imagen": "producto24.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Altima",
+      "producto": "Amortiguador delantero",
+      "precio": 1000,
+      "imagen": "producto25.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Altima",
+      "producto": "Filtro de aire",
+      "precio": 290,
+      "imagen": "producto26.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Altima",
+      "producto": "Pastillas de freno",
+      "precio": 680,
+      "imagen": "producto27.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Rogue",
+      "producto": "Amortiguador trasero",
+      "precio": 900,
+      "imagen": "producto28.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Rogue",
+      "producto": "Filtro de aceite",
+      "precio": 370,
+      "imagen": "producto29.png"
+    },
+    {
+      "marca": "Nissan",
+      "modelo": "Rogue",
+      "producto": "Pastillas de freno",
+      "precio": 720,
+      "imagen": "producto30.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Malibu",
+      "producto": "Filtro de aire",
+      "precio": 300,
+      "imagen": "producto31.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Malibu",
+      "producto": "Pastillas de freno",
+      "precio": 740,
+      "imagen": "producto32.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Silverado",
+      "producto": "Freno de disco",
+      "precio": 700,
+      "imagen": "producto33.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Silverado",
+      "producto": "Amortiguador delantero",
+      "precio": 950,
+      "imagen": "producto34.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Silverado",
+      "producto": "Filtro de aceite",
+      "precio": 390,
+      "imagen": "producto35.png"
+    },
+    {
+      "marca": "Chevrolet",
+      "modelo": "Traverse",
+      "producto": "Pastillas de freno",
+      "precio": 780,
+      "imagen": "producto36.png"
+    }
+  ]
+  
